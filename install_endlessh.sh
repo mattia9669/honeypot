@@ -21,7 +21,7 @@ Port 22
 Delay 10000
 MaxLineLength 32
 MaxClients 4096
-LogLevel 0
+LogLevel 1
 BindFamily 0
 EOF
 
@@ -73,12 +73,15 @@ EOF
 
 setcap 'cap_net_bind_service=+ep' /usr/local/bin/endlessh
 
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+sed -i 's/^#\?Port [0-9]\+/Port 22554/' /etc/ssh/sshd_config
+systemctl restart sshd.service
+
 systemctl daemon-reload
 systemctl enable --now endlessh.service
 systemctl start endlessh.service
 systemctl status endlessh.service
 
-cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sed -i 's/^#\?Port [0-9]\+/Port 22554/' /etc/ssh/sshd_config
+
 
 #rm /tmp/install_endlessh.sh
