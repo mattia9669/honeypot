@@ -4,6 +4,7 @@
 # run script with cmd
 # wget -q -O /tmp/install_endlessh.sh https://raw.githubusercontent.com/mattia9669/honeypot/refs/heads/main/install_endlessh.sh && sudo bash /tmp/install_endlessh.sh
 
+apt update
 apt install git
 git clone https://github.com/skeeto/endlessh/
 cd endlessh
