@@ -2,7 +2,7 @@
 # installation of endlessh
 #
 # run script with cmd
-# wget -q -O /tmp/install_endlessh.sh this && sudo bash /tmp/install_endlessh.sh
+# wget -q -O /tmp/install_endlessh.sh https://raw.githubusercontent.com/mattia9669/honeypot/refs/heads/main/install_endlessh.sh && sudo bash /tmp/install_endlessh.sh
 
 apt install git
 git clone https://github.com/skeeto/endlessh/
